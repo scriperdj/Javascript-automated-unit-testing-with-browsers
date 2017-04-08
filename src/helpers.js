@@ -4,6 +4,20 @@
  */
 
  /**
+  *
+  *
+  * Create Anchor element for parsing the given url
+  * @function getUrlObj
+  * @param {string} url
+  * @returns {object}
+  */
+ var getUrlObj = function (url) {
+    var anchor = document.createElement('a');
+    anchor.href = url;
+    return anchor;
+ };
+
+ /**
  *
  *
  * Get cookie with the name provided
@@ -34,17 +48,14 @@ var setCookie = function(cookieName, value, expirydays) {
   if (!navigator.cookieEnabled) {
       return;
   }
-  // debugger;
+  debugger;
   var expiryDate = new Date();
   var expTime = (expirydays!=1)? (365 * 86400000) : (expirydays * 1800000);
   expiryDate.setTime(expiryDate.getTime() + expTime);
-  var host = getDomain();
-  // If localhost or Ip, set domain as empty
-  var domain = (host.indexOf('localhost') == -1 && isNaN(host.split('.')[0]))? '.' + host : '';
   document.cookie = cookieName + '=' + encodeURIComponent(value)
                     + (expirydays ? ';expires=' + expiryDate.toGMTString() : '')
                     + ';path=' + '/'
-                    + (domain ? ';domain=' + domain : '');
+                    + ';domain=' + '';
 };
 
 
@@ -175,3 +186,10 @@ var getValuesFromUrl = function (url) {
    // Make the call!
    return normalize(recurse(node));
  };
+
+
+module.exports.getUrlObj = getUrlObj;
+module.exports.getValuesFromUrl = getValuesFromUrl;
+module.exports.setCookie = setCookie;
+module.exports.getCookie = getCookie;
+module.exports.getPlainText = getPlainText;
