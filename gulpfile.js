@@ -13,6 +13,7 @@ var Server = require('karma').Server;
 // Development Dependencies
 var eslint = require('gulp-eslint');
 var jsdoc = require('gulp-jsdoc3');
+var pump = require('pump');
 
 gulp.task('lint', function() {
   return gulp.src(['./src/**/*.js'])
@@ -60,3 +61,5 @@ gulp.task('uglify', ['browserify'], function() {
     .pipe(rename('index.min.js'))
     .pipe(gulp.dest('public/javascripts'));
 });
+
+gulp.task('default',  ['test','uglify','doc']);
