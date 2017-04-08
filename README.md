@@ -32,3 +32,5 @@ $ gulp
 ```bash
 $ gulp doc
 ```
+
+Blog post explaining setup is available at [sathish.me](http://sathish.me/javascript/2017/04/08/Settingup-environment-for-test-driven-development-of-client-side-javascript-using-mocha-and-karma.html)
