@@ -1,0 +1,44 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "commonjs": true,
+        "mocha": true,
+        "jquery": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:flowtype/recommended"
+    ],
+    "installedESLint": true,
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "jsx": true,
+          "experimentalObjectRestSpread": true
+      }
+    },
+    "plugins": [
+        "flowtype",
+        "chai-expect"
+    ],
+    "rules": {
+        "no-console": 0,
+        "indent": 0,
+        "no-unused-vars": 0,
+        "no-native-reassign": 0,
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ]
+    }
+}
